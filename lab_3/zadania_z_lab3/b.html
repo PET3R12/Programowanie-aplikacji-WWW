@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="animacjaTestowa1" class="test-block">Kliknij, a się powiększe</div>
+
+    <script>
+
+    $("#animacjaTestowa1").on("click", function(){
+        $(this). animate({
+            width: "500px",
+            opacity: 0.4,
+            fontSize: "3em",
+            borderwidth: "10px"
+        }, 1500);
+    });
+
+    </script>
+
+</body>
+</html>

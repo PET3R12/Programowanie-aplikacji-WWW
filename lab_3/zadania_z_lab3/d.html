@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="animacjaTestowa3" class="test-block">
+        Klikaj, abym urósł
+    </div>
+
+    <script>
+        $("#animacjaTestowa3").on("click", function(){
+            if (!$(this).is(':animated')) {
+                $(this).animate({
+                    width: "+=" + 50,
+                    height: "+=" + 10,
+                    opacity: "-=" + 0.1,
+                }, {
+                    duration: 3000 //inny sposób deklaracji czasu trwania animacji
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
