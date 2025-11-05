@@ -1,6 +1,12 @@
+<?php
+  $page = $_GET['page'] ?? 'glowna';
+  $allowed_pages = ['glowna', 'ranking', 'prehistoryczne', 'tabela', 'orankingu'];
+  $file_to_include = 'podstrony/' . $page . '.html';
+?>
+
 <!doctype html>
 <html lang="pl">
-<!-- http://localhost/moj_projekt/strona_v3 -->
+<!-- http://localhost/moj_projekt/strona1v3 -->
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Projekt 1">
@@ -137,7 +143,13 @@ $(document).ready(function() {
             borderwidth: "10px"
         }, 1500);
     });
-    </script>
+</script>
+
+<?php
+  $nr_indeksu = '175316';
+  $nrGrupy = 'ISI2';
+  echo 'Piotr Ostaszewski '.$nr_indeksu.' grupa '.$nrGrupy.' <br /><br />';
+?>
 
 </body>
 </html>
