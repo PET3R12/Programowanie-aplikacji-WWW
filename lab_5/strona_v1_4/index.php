@@ -6,6 +6,12 @@
   if($_GET['idp'] =='orankingu')$strona = 'html/orankingu.html';
   if($_GET['idp'] =='prehistoryczne')$strona = 'html/prehistoryczne.html';
   if($_GET['idp'] =='tabela')$strona = 'html/tabela_porownan.html';
+  if($_GET['idp'] =='filmy')$strona = 'html/filmy.html';
+
+  if(!file_exists($strona))
+  {
+    $strona= 'html/glowna.html';
+  }
   
   $page = $_GET['page'] ?? 'glowna';
   $allowed_pages = ['glowna', 'ranking_zolwii', 'prehistoryczne', 'tabela', 'orankingu'];
@@ -42,6 +48,7 @@
         <a href="index.php?idp=prehistoryczne">Prehistoryczne żółwie</a>
         <a href="index.php?idp=tabela">Tabela porównań żółwii</a>
         <a href="index.php?idp=orankingu">O rankingu</a>
+        <a href="index.php?idp=filmy">Filmy</a>
       <div class="kolory">
         <INPUT TYPE="button" VALUE="żółty" ONCLICK="changeBackground('#FFF000')">
         <INPUT TYPE="button" VALUE="czarny" ONCLICK="changeBackground('#000000')">
