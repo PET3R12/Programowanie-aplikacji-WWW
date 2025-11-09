@@ -1,26 +1,21 @@
 <?php
+  include "cfg.php";
+  include "showpage.php";
+  $id_strony = 2;
   error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-  if($_GET['idp'] =='')$strona = 'html/glowna.html';
-  if($_GET['idp'] =='glowna')$strona = 'html/glowna.html';
-  if($_GET['idp'] =='ranking_zolwi')$strona = 'html/ranking_zolwi.html';
-  if($_GET['idp'] =='orankingu')$strona = 'html/orankingu.html';
-  if($_GET['idp'] =='prehistoryczne')$strona = 'html/prehistoryczne.html';
-  if($_GET['idp'] =='tabela')$strona = 'html/tabela_porownan.html';
-  if($_GET['idp'] =='filmy')$strona = 'html/filmy.html';
+  if($_GET['idp'] =='')$id_strony = 2;
+  if($_GET['idp'] =='glowna')$id_strony = 2;
+  if($_GET['idp'] =='ranking_zolwi')$id_strony = 5;
+  if($_GET['idp'] =='orankingu')$id_strony = 3;
+  if($_GET['idp'] =='prehistoryczne')$id_strony = 4;
+  if($_GET['idp'] =='tabela')$id_strony = 6;
+  if($_GET['idp'] =='filmy')$id_strony = 1;
 
-  if(!file_exists($strona))
-  {
-    $strona= 'html/glowna.html';
-  }
-  
-  $page = $_GET['page'] ?? 'glowna';
-  $allowed_pages = ['glowna', 'ranking_zolwii', 'prehistoryczne', 'tabela', 'orankingu'];
-  $file_to_include = 'podstrony/' . $page . '.html';
+  $strona = PokazPodstrone($id_strony, $link);
 ?>
 
 <!doctype html>
 <html lang="pl">
-<!-- http://localhost/moj_projekt/strona1v3 -->
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Projekt 1">
@@ -65,7 +60,7 @@
 
   <main class="container" role="main">
     <?php
-      include($strona);
+      echo $strona;
     ?>
   </main>
 
